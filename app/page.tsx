@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <header className="px-4 md:px-8 pt-20 pb-32 bg-gradient-to-br from-blue-50 to-white">
+      <header className="px-4 md:px-8 pt-20 pb-32 bg-gradient-to-br from-blue-50 to-white" id="home">
   <div className="max-w-6xl mx-auto">
     <div className="grid md:grid-cols-2 gap-8 items-center">
       {/* Text Content */}
@@ -135,7 +135,8 @@ export default function Home() {
             <Image
               src="/portfolioImage.jpg"
               alt="Favour Madubuko"
-              fill
+              fill 
+
               className="w-full h-full object-cover"
             />
           </div>
@@ -156,7 +157,7 @@ export default function Home() {
 </header>
 
       {/* Areas of Interest */}
-      <section className="px-4 md:px-8 py-20">
+      <section className="px-4 md:px-8 py-20" id="interests">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -183,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="px-4 md:px-8 py-20 bg-gray-50">
+      <section className="px-4 md:px-8 py-20 bg-gray-50" id='projects'>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -230,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* Certifications & Awards */}
-      <section className="px-4 md:px-8 py-20">
+      <section className="px-4 md:px-8 py-20" id='certifications'>
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -240,7 +241,7 @@ export default function Home() {
           >
             {/* Certifications */}
             <div className="space-y-8">
-              <h2 className="text-3xl font-bold">Certifications</h2>
+              <h2 className="text-3xl font-bold">Certifications </h2>
               <div className="space-y-6">
                 {certifications.map((cert, index) => (
                   <motion.div
@@ -275,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <footer className="px-4 md:px-8 py-20 bg-gray-50">
+      <footer className="px-4 md:px-8 py-20 bg-gray-50" id="contact">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0 }}
