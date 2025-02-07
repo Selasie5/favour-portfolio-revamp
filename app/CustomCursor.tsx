@@ -58,7 +58,7 @@ const CustomCursor = () => {
       
       {/* Trailing cursor ring */}
       <motion.div 
-        className="fixed pointer-events-none z-50 w-8 h-8 border-2 border-blue-400 rounded-full"
+        className="fixed pointer-events-none z-50 w-8 h-8 border-2 border-blue-400 rounded-full hidden md:block"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
