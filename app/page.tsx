@@ -135,8 +135,7 @@ export default function Home() {
             <Image
               src="/portfolioImage.jpg"
               alt="Favour Madubuko"
-              fill 
-
+              fill
               className="w-full h-full object-cover"
             />
           </div>
@@ -155,7 +154,6 @@ export default function Home() {
     </div>
   </div>
 </header>
-
       {/* Areas of Interest */}
       <section className="px-4 md:px-8 py-20" id="interests">
         <div className="max-w-6xl mx-auto">

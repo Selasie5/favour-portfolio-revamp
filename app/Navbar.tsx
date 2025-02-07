@@ -5,7 +5,7 @@ import { motion, useScroll } from 'framer-motion';
 import Link from 'next/link';
 import { Menu, X, Clock as ClockIcon, MapPin } from 'lucide-react';
 
-// Location Component remains the same
+// Location Component
 const Location = () => {
   const [location, setLocation] = useState('Loading...');
   const [error, setError] = useState('');
@@ -28,7 +28,7 @@ const Location = () => {
         setLocation(`${city}${city && country ? ', ' : ''}${country}`);
       } catch (err) {
         setError('Location unavailable');
-        console.log(error, err)
+        console.log(error, err);
         setLocation('Location unavailable');
       }
     };
@@ -46,7 +46,7 @@ const Location = () => {
   );
 };
 
-// Clock Component remains the same
+// Clock Component
 const Clock = () => {
   const [time, setTime] = useState(new Date());
 
@@ -74,7 +74,7 @@ const Clock = () => {
   );
 };
 
-// Updated Navbar Component
+// Navbar Component
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,7 +85,7 @@ const NavBar = () => {
     { label: 'Interests', href: '#interests' },
     { label: 'Projects', href: '#projects' },
     { label: 'Certifications', href: '#certifications' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Contact', href: '#contact' },
   ];
 
   useEffect(() => {
@@ -150,7 +150,7 @@ const NavBar = () => {
           animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           className="md:hidden overflow-hidden"
         >
-          <div className="pb-4 space-y-2">
+          <div className="pb-4 space-y-2 bg-white/80 backdrop-blur-md">
             {/* Clock and Location in mobile menu */}
             <div className="px-4 py-2 space-y-2">
               <Clock />
