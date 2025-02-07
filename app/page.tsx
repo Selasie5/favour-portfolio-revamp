@@ -85,7 +85,7 @@ export default function Home() {
         <p className="max-w-2xl text-gray-600 leading-relaxed">
           A Senior at Ashesi University majoring in CS/IS and a technology enthusiast who enjoys discussions on information systems and industries that impact lives daily. My passion lies in research, data science for healthcare (biomedical), and natural language processing for social good.
         </p>
-        <div className="flex gap-4 pt-4">
+        <div className="flex flex-col md:flex-row gap-4 pt-4">
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
