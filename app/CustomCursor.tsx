@@ -7,10 +7,7 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    interface MousePosition {
-      x: number;
-      y: number;
-    }
+    
 
     const updateMousePosition = (e: MouseEvent): void => {
       setMousePosition({ x: e.clientX, y: e.clientY });

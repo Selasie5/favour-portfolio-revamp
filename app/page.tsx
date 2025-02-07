@@ -135,6 +135,7 @@ export default function Home() {
             <Image
               src="/portfolioImage.jpg"
               alt="Favour Madubuko"
+              fill
               className="w-full h-full object-cover"
             />
           </div>
