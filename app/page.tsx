@@ -3,15 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Brain, 
-  Briefcase, 
   Download, 
   Github, 
   Linkedin, 
-  Mail, 
-  ChevronDown,
+  Mail,
   ExternalLink,
-  Code
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -98,7 +94,7 @@ export default function Home() {
             <Download className="w-4 h-4" />
             Download CV
           </motion.a>
-          <Link href="https://linkedin.com" passHref>
+          <Link href="https://www.linkedin.com/in/madubuko-favour-c/" passHref>
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -108,7 +104,7 @@ export default function Home() {
               LinkedIn
             </motion.a>
           </Link>
-          <Link href="https://github.com" passHref>
+          <Link href="https://github.com/favouralgo" passHref>
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -136,7 +132,7 @@ export default function Home() {
           {/* Image container with border effect */}
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <img
-              src="/api/placeholder/400/400"
+              src="/portfolioImage.jpg"
               alt="Favour Madubuko"
               className="w-full h-full object-cover"
             />
@@ -298,7 +294,7 @@ export default function Home() {
                   Email Me
                 </motion.a>
               </Link>
-              <Link href="https://linkedin.com" passHref>
+              <Link href="https://www.linkedin.com/in/madubuko-favour-c/" passHref>
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
