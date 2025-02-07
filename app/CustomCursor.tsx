@@ -42,7 +42,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor dot */}
       <motion.div 
-        className="fixed pointer-events-none z-50 w-3 h-3 bg-blue-600 rounded-full"
+        className="fixed pointer-events-none z-50 w-3 h-3 bg-blue-600 rounded-full hidden md:block"
         animate={{
           x: mousePosition.x - 6,
           y: mousePosition.y - 6,
