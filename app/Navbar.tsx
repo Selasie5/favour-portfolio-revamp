@@ -13,7 +13,7 @@ const Location = () => {
   useEffect(() => {
     const getLocation = async () => {
       try {
-        const position:any = await new Promise((resolve, reject) => {
+        const position: GeolocationPosition = await new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject);
         });
 
@@ -28,6 +28,7 @@ const Location = () => {
         setLocation(`${city}${city && country ? ', ' : ''}${country}`);
       } catch (err) {
         setError('Location unavailable');
+        console.log(error, err)
         setLocation('Location unavailable');
       }
     };

@@ -10,6 +10,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const projects = [
@@ -131,7 +132,7 @@ export default function Home() {
           
           {/* Image container with border effect */}
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg">
-            <img
+            <Image
               src="/portfolioImage.jpg"
               alt="Favour Madubuko"
               className="w-full h-full object-cover"
