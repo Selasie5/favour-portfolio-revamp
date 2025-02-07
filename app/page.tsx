@@ -90,7 +90,7 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="/cv.pdf"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center w-full md:w-auto gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <Download className="w-4 h-4" />
             Download CV
@@ -99,7 +99,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border  w-full md:w-auto border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
             >
               <Linkedin className="w-4 h-4" />
               LinkedIn
@@ -109,7 +109,7 @@ export default function Home() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border  w-full md:w-auto border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
             >
               <Github className="w-4 h-4" />
               GitHub
