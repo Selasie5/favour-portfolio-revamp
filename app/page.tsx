@@ -1,100 +1,319 @@
-import Image from "next/image";
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Brain, 
+  Briefcase, 
+  Download, 
+  Github, 
+  Linkedin, 
+  Mail, 
+  ChevronDown,
+  ExternalLink,
+  Code
+} from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const projects = [
+    {
+      title: "Medical Invoicing System",
+      description: "A comprehensive system for managing medical invoices",
+      tech: ["React", "Node.js", "PostgreSQL"],
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "Heart Disease Prediction",
+      description: "ML model for predicting heart disease risk",
+      tech: ["Python", "TensorFlow", "scikit-learn"],
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "Bus Ticketing System",
+      description: "Digital solution for bus ticket management",
+      tech: ["PHP", "MySQL", "Bootstrap"],
+      github: "#",
+      demo: "#"
+    },
+    {
+      title: "Tours and Travel Management",
+      description: "Complete travel booking and management platform",
+      tech: ["React", "Node.js", "MongoDB"],
+      github: "#",
+      demo: "#"
+    }
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const certifications = [
+    "Startup Semester - UC Berkeley SCET",
+    "Introduction to Data Engineering",
+    "Data Engineering Essentials",
+    "The Data Science of Health Informatics",
+    "Azure DevOps Platform Fundamentals"
+  ];
+
+  const awards = [
+    {
+      title: "Finalist",
+      event: "Canisa Health, Oxford University Africa Innovation Seed Fund - 2024"
+    },
+    {
+      title: "1st Place",
+      event: "InnoTech, African Digital Health Community Health Innovation Bootcamp - 2023"
+    },
+    {
+      title: "2nd Place",
+      event: "Tuelimishe, Creative Approaches to African Development - 2021"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
+      {/* Hero Section */}
+      <header className="px-4 md:px-8 pt-20 pb-32 bg-gradient-to-br from-blue-50 to-white">
+  <div className="max-w-6xl mx-auto">
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      {/* Text Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6 order-2 md:order-1"
+      >
+        <h2 className="text-blue-600 font-medium">Hello, I am</h2>
+        <h1 className="text-5xl md:text-6xl font-bold">Favour Madubuko</h1>
+        <h3 className="text-2xl text-gray-600">Software Engineer - Data Science & AI</h3>
+        <p className="max-w-2xl text-gray-600 leading-relaxed">
+          A Senior at Ashesi University majoring in CS/IS and a technology enthusiast who enjoys discussions on information systems and industries that impact lives daily. My passion lies in research, data science for healthcare (biomedical), and natural language processing for social good.
+        </p>
+        <div className="flex gap-4 pt-4">
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/cv.pdf"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Download className="w-4 h-4" />
+            Download CV
+          </motion.a>
+          <Link href="https://linkedin.com" passHref>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
+            >
+              <Linkedin className="w-4 h-4" />
+              LinkedIn
+            </motion.a>
+          </Link>
+          <Link href="https://github.com" passHref>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              GitHub
+            </motion.a>
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </motion.div>
+
+      {/* Profile Image */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="order-1 md:order-2 flex justify-center md:justify-end"
+      >
+        <div className="relative">
+          {/* Background circles for visual effect */}
+          <div className="absolute -z-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-60 -top-10 -right-10" />
+          <div className="absolute -z-10 w-72 h-72 bg-blue-50 rounded-full blur-2xl opacity-60 -bottom-10 -left-10" />
+          
+          {/* Image container with border effect */}
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <img
+              src="/api/placeholder/400/400"
+              alt="Favour Madubuko"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          
+          {/* Floating card with emoji */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+            className="absolute -bottom-6 -right-6 bg-white rounded-full p-4 shadow-lg"
+          >
+            <span className="text-2xl">👋</span>
+          </motion.div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</header>
+
+      {/* Areas of Interest */}
+      <section className="px-4 md:px-8 py-20">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
+            <h2 className="text-3xl font-bold">Areas of Interest</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Interest cards remain the same */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="p-6 rounded-xl bg-white shadow-lg border border-gray-100"
+              >
+                <h3 className="text-xl font-semibold mb-4">Health Informatics</h3>
+                <p className="text-gray-600">
+                  Life science industries, clinics and hospitals face the challenge of navigating complex decisions and collaborations in improving clinical trials, and treatment plans for patients. What strategies can be implemented to improve collaboration among life science industries, clinics, and hospitals using health informatics?
+                </p>
+              </motion.div>
+              {/* ... other interest cards ... */}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="px-4 md:px-8 py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
+            <h2 className="text-3xl font-bold">Featured Projects</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="p-6 rounded-xl bg-white shadow-lg border border-gray-100"
+                >
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech, i) => (
+                      <span key={i} className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    <Link href={project.github} passHref>
+                      <motion.a className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+                        <Github className="w-4 h-4" />
+                        Code
+                      </motion.a>
+                    </Link>
+                    <Link href={project.demo} passHref>
+                      <motion.a className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-1">
+                        <ExternalLink className="w-4 h-4" />
+                        Demo
+                      </motion.a>
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Certifications & Awards */}
+      <section className="px-4 md:px-8 py-20">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-16"
+          >
+            {/* Certifications */}
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold">Certifications</h2>
+              <div className="space-y-6">
+                {certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ x: 5 }}
+                    className="p-4 border-l-2 border-blue-600 hover:bg-blue-50 transition-colors"
+                  >
+                    {cert}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Awards */}
+            <div className="space-y-8">
+              <h2 className="text-3xl font-bold">Awards</h2>
+              <div className="space-y-6">
+                {awards.map((award, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ x: 5 }}
+                    className="p-4 border-l-2 border-blue-600 hover:bg-blue-50 transition-colors"
+                  >
+                    <div className="font-semibold">{award.title}</div>
+                    <div className="text-gray-600">{award.event}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <footer className="px-4 md:px-8 py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <h2 className="text-3xl font-bold">Get in Touch</h2>
+            <p className="text-gray-600">Feel free to reach out for collaborations or just a friendly hello</p>
+            <div className="flex justify-center gap-6">
+              <Link href="mailto:favourmadubuko1@gmail.com" passHref>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  Email Me
+                </motion.a>
+              </Link>
+              <Link href="https://linkedin.com" passHref>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </motion.a>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+        <div className="mt-20 text-center text-gray-600">
+          © {new Date().getFullYear()} Favour Madubuko. All Rights Reserved.
+        </div>
       </footer>
     </div>
   );
